@@ -187,6 +187,20 @@ node_types:
           implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/master/artifacts/apache/apache_start.yml
 
 # INDIGO non normative types
+  tosca.nodes.westlife.WebServer.Apache.Saxs:
+    derived_from: tosca.nodes.WebServer.Apache
+    artifacts:
+      saxs_agent_role:
+          file: alpegon.saxs
+          type: tosca.artifacts.AnsibleGalaxy.role
+    interfaces:
+      Standard:
+        create:
+          implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/master/artifacts/apache/apache_install.yml
+        start:
+          implementation: https://raw.githubusercontent.com/indigo-dc/tosca-types/master/artifacts/apache/apache_start.yml
+
+
 
   tosca.nodes.indigo.Database.MySQL:
     derived_from: tosca.nodes.Database.MySQL
