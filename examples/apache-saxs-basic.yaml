@@ -9,8 +9,14 @@ description: >
 topology_template:
 
   node_templates:
+    
     apache:
-      type: osca.nodes.westlife.WebServer.Apache.Saxs
+      type: tosca.nodes.WebServer.Apache
+      requirements:
+        - host: web_server
+
+    saxs:
+      type: tosca.nodes.indigo.Saxs
       requirements:
         - host: web_server
       interfaces:
